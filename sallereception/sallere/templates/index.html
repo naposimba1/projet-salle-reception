@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de la salle de reception</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    p{
+        color: blue;
+        
+    }
+    body{
+        margin-left: auto;
+        margin-right: auto;
+        padding:auto;
+
+
+    }
+    </style>
+    
+</head>
+
+<body>
+    
+    <center>   
+<h1>Liste des réservations de la salle</h1> 
+    </center>
+<center> 
+    
+{% for x in reservations %} 
+    <p>Client: {{x.client.nom_client}} {{x.client.prenom_client }} </p> 
+    <p>Fête:{{x.type_fete.nom_fete}} </p>
+    <p>Décor: {{x.type_decor.nom_decor}} </p>
+    {% comment %} <p>Montant Décor: {{x.type_decor.montant_decor}} </p> {% endcomment %}
+    <p>Montant à payer: {{x.a_payer}} </p>
+    <p>Avance : {{x.avance}} </p> 
+    <p>Décor: {{x.type_decor.nom_decor}} </p>
+    <p>------------------------------------------------------------------- </p>
+
+{% endfor %}
+
+<h1>Total de la somme encaissée : {{total}} </h1>
+</center>
+</body>
+
+</html>
